@@ -1,15 +1,11 @@
-import react from 'react';
-import'./App.css';
-import CharacterCard from '.CharacterCard';
-import WordCard from './WordCard';
-const word ='Hello';
-function App() {
-    return(
+import React from 'react';
+import CharacterCard from './CharacterCard';
+export default function WordCard(props){
+    return (
         <div>
-{
-    <WordCard value="hello" className="card"/>
-}
-    <div>
- );
-}
-export default App;
+       { Array.from(props.value).map((c, i) => <CharacterCard value={c} key={i}/>) }
+        </div>
+        );
+       }
+
+   
